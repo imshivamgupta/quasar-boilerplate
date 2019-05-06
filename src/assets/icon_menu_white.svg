@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#fff;fill-rule:evenodd}
+        </style>
+    </defs>
+    <g id="icon_menu_white" transform="translate(-56 -418)">
+        <path id="rectangle" d="M0 0h40v40H0z" class="cls-1" transform="translate(56 418)"/>
+        <path id="ic_menu_white" d="M3 25.132h29.566v-3.189H3v3.189zm0-7.972h29.566v-3.188H3v3.188zM3 6v3.189h29.566V6z" class="cls-2" transform="translate(58.217 422.434)"/>
+    </g>
+</svg>
