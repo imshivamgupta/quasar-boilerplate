@@ -17,19 +17,26 @@
 
     </q-layout-header>
     <q-layout-drawer
+      side="left"
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
+      :mini="mini"
+      @mouseover="mini = false"
+      @mouseout="mini = true"
+      :width="width"
     >
       <q-scroll-area class="fit">
         <q-list>
           <!-- li list -->
           <q-item clickable v-ripple>
             <q-item-side>
-              <q-item-tile avatar class="q-pt-auto">
+              <q-item-tile>
                 <q-icon name="inbox" />
               </q-item-tile>
             </q-item-side>
-            <q-item-main label="Inbox" />
+            <q-item-main >
+              <q-item-tile/>
+            </q-item-main>
           </q-item>
         </q-list>
       </q-scroll-area>
@@ -47,8 +54,10 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: false,
+      leftDrawerOpen: true,
       tab: '',
+      mini: true,
+      width: 200,
       navItems: [
         { name: 'home', label: 'HOME' },
         { name: 'refferalAndTsa', label: 'REFFERAL & TSA' },
@@ -67,12 +76,11 @@ export default {
 </script>
 
 <style lang="stylus">
-#navbar
-  .nav-item /deep/.bg-primary
-    background none !important
-
-.q-tabs-bar
-  border 3px solid #ffdd00
+#navbar {
+  .nav-item /deep/.bg-primary {
+    background: none !important;
+  }
+}
 
 .q-tab-label
   font-size 14px
@@ -88,4 +96,15 @@ export default {
   background yellow
   border-radius 50%
   color black
+.q-tabs-bar {
+  border: 3px solid #ffdd00;
+}
+
+.q-tab-label {
+  font-size: $button-font-size;
+  line-height: 1.43;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: #ffffff;
+}
 </style>
