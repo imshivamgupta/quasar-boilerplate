@@ -96,6 +96,7 @@ export default {
   background yellow
   border-radius 50%
   color black
+  width 20px
 .q-tabs-bar {
   border: 3px solid #ffdd00;
 }
