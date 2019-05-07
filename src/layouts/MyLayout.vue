@@ -1,7 +1,7 @@
 <template>
-  <q-layout row view="lHh Lpr lFf">
+  <q-layout row view="hHh Lpr lff">
     <q-layout-header row>
-      <q-toolbar color="tertiary" id="navbar">
+      <q-toolbar color="tertiary" id="navbar" class="q-pb-none">
         <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
@@ -13,7 +13,21 @@
     <q-layout-drawer
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
-    ></q-layout-drawer>
+    >
+      <q-scroll-area class="fit">
+        <q-list>
+          <!-- li list -->
+          <q-item clickable v-ripple>
+            <q-item-side>
+              <q-item-tile avatar>
+                <q-icon name="inbox" />
+              </q-item-tile>
+            </q-item-side>
+            <q-item-main label="Inbox" />
+          </q-item>
+        </q-list>
+      </q-scroll-area>
+    </q-layout-drawer>
 
     <q-page-container>
       <router-view/>
