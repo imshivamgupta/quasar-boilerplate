@@ -5,7 +5,7 @@
         <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
-        <q-tabs class="nav-item" v-for="(item , index) in navItems" :key="index">
+        <q-tabs v-model="tab" class="nav-item" v-for="(item , index) in navItems" :key="index">
           <q-tab slot="title" :name="item.name" :label="item.label"/>
         </q-tabs>
       </q-toolbar>
@@ -28,6 +28,7 @@ export default {
   data () {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
+      tab: '',
       navItems: [
         { name: 'home', label: 'HOME' },
         { name: 'refferalAndTsa', label: 'REFFERAL & TSA' },
