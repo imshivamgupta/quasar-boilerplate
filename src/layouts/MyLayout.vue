@@ -25,7 +25,7 @@
           <!-- li list -->
           <q-item clickable v-ripple>
             <q-item-side>
-              <q-item-tile avatar>
+              <q-item-tile avatar class="q-pt-auto">
                 <q-icon name="inbox" />
               </q-item-tile>
             </q-item-side>
