@@ -8,6 +8,12 @@
         <q-tabs v-model="tab" class="nav-item" v-for="(item , index) in navItems" :key="index">
           <q-tab slot="title" :name="item.name" :label="item.label"/>
         </q-tabs>
+        <q-tabs v-model="tab" class="right-nav" >
+          <q-tab slot="title">view as</q-tab>
+          <q-tab slot="title"><img src="../assets/btn_applications_up.svg" alt="menu-icon"></q-tab>
+          <q-tab slot="title"><img src="../assets/btn_notifications_up.svg" alt="notification"></q-tab>
+
+        </q-tabs>
       </q-toolbar>
     </q-layout-header>
     <q-layout-drawer
@@ -60,5 +66,10 @@ export default {
   letter-spacing: 1.4px
   text-align: left
   color: #ffffff
+
+#navbar
+  .right-nav /deep/.bg-primary
+    align left
+    background none !important
 
 </style>
