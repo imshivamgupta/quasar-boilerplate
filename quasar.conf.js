@@ -47,6 +47,7 @@ module.exports = function (ctx) {
         'QPage',
         'QToolbar',
         'QToolbarTitle',
+        'QBtnGroup',
         'QBtn',
         'QIcon',
         'QList',
@@ -57,8 +58,8 @@ module.exports = function (ctx) {
         'QBtnToggle',
         'QTabs',
         'QTab',
-        'QScrollArea'
-
+        'QScrollArea',
+        'QItemTile'
       ],
       directives: [
         'Ripple'
