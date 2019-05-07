@@ -12,6 +12,7 @@
         <q-btn label='View As'/>
         <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
         <q-btn><img src="../assets/btn_notifications_up.svg" alt=""><span class="counter q-mr-lg q-mb-lg">4</span></q-btn>
+        <!-- <q-btn label='name person'></q-btn><q-avatar color="primary" text-color="white">J</q-avatar> -->
       </q-btn-group>
       </q-toolbar>
 
@@ -34,7 +35,6 @@
         </q-list>
       </q-scroll-area>
     </q-layout-drawer>
-
     <q-page-container>
       <router-view/>
     </q-page-container>
