@@ -1,30 +1,20 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-layout-header>
-      <!-- <q-toolbar color="primary" :glossy="$q.theme === 'mat'" :inverted="$q.theme === 'ios'">
+  <q-layout row view="lHh Lpr lFf">
+    <q-layout-header row>
+      <q-toolbar color="tertiary" id="navbar">
         <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
-
-        <q-toolbar-title>
-          Quasar App
-          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
-        </q-toolbar-title>
-      </q-toolbar> -->
-      <q-toolbar color="tertiary" >
-        <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" >
-        <q-icon name="menu"/>
-        </q-btn>
-        <q-tabs flex align="left" class="navbar">
-          <q-route-tab to="#" label="HOME"/>
-          <q-route-tab to="#" label="REFFERAL  & TSA"/>
-          <q-route-tab to="#" label="ASSESSMENTS"/>
-          <q-route-tab to="#" label="TREATMENT"/>
-          <q-route-tab to="#" label="CALENDER"/>
-          <q-route-tab to="#" label="ANALYSIS"/>
+        <q-tabs class="nav-item" v-for="(item , index) in navItems" :key="index">
+          <q-tab slot="title" :name="item.name" :label="item.label"/>
         </q-tabs>
       </q-toolbar>
     </q-layout-header>
+    <q-layout-drawer
+      v-model="leftDrawerOpen"
+      :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
+    ></q-layout-drawer>
+
     <q-page-container>
       <router-view/>
     </q-page-container>
@@ -33,12 +23,20 @@
 
 <script>
 import { openURL } from 'quasar'
-
 export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      leftDrawerOpen: this.$q.platform.is.desktop,
+      navItems: [
+        { name: 'home', label: 'HOME' },
+        { name: 'refferalAndTsa', label: 'REFFERAL & TSA' },
+        { name: 'assesments', label: 'ASSESMENTS' },
+        { name: 'treatment', label: 'TREATMENT' },
+        { name: 'calender', label: 'CALENDER' },
+        { name: 'analysis', label: 'ANALYSIS' }
+      ]
+      // model: 'one'
     }
   },
   methods: {
@@ -48,9 +46,18 @@ export default {
 </script>
 
 <style lang="stylus">
-.q-layout-header
-  display flex
-  flex-direction row
-.q-tab-panes
-  display flex
+#navbar
+  .nav-item /deep/.bg-primary
+    background: none !important;
+
+.q-tabs-bar
+  border: 3px solid #ffdd00;
+
+.q-tab-label
+  font-size 14px
+  // line-height: 1.43;
+  // letter-spacing: 1.4px;
+  text-align: left
+  color: #ffffff
+
 </style>
