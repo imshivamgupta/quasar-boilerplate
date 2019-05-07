@@ -27,7 +27,7 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop,
+      leftDrawerOpen: false,
       tab: '',
       navItems: [
         { name: 'home', label: 'HOME' },
@@ -49,15 +49,15 @@ export default {
 <style lang="stylus">
 #navbar
   .nav-item /deep/.bg-primary
-    background: none !important;
+    background none !important
 
 .q-tabs-bar
-  border: 3px solid #ffdd00;
+  border 3px solid #ffdd00
 
 .q-tab-label
   font-size 14px
-  // line-height: 1.43;
-  // letter-spacing: 1.4px;
+  line-height: 1.43
+  letter-spacing: 1.4px
   text-align: left
   color: #ffffff
 
