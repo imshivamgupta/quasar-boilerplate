@@ -26,12 +26,12 @@
     <q-layout-drawer
       side="left"
       v-model="leftDrawerOpen"
-      :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
+      :content-class="$q.theme === 'mat' ? 'bg-grey-4 no-shadow' : null"
       :mini="miniState"
       :width="width"
     >
       <q-scroll-area class="fit">
-        <q-list inset-separator class="q-pt-lg">
+        <q-list class="q-pt-lg no-border">
           <!-- <q-list-header>
             Menu Items
           </q-list-header> -->
@@ -141,4 +141,6 @@ export default {
   font-weight: 500
   letter-spacing 1.4px
 
+.q-list
+  border  none
 </style>
