@@ -119,28 +119,24 @@ export default {
 .q-tabs-bar
   border: 3px solid #ffdd00;
 
-.q-tab-label {
+.q-tab-label
   font-size: $button-font-size;
-  line-height: 1.43;
-  letter-spacing: 1.4px;
-  text-align: left;
-  color: #ffffff;
-}
+  letter-spacing: $letter-spacing
+  text-align: left
+  color: #ffffff
+
 .q-tab
   padding 0
 
 .q-tabs-head
-  font-family 400
-  font-size 14px
+  font-size $font-size
 
 .q-item.active, .q-item.router-link-active, .q-item:focus
-  background-color #ffdd00
+  background-color $sidebar-active-link
 
 .q-item
-  font-size 14px
-  font-weight: 500
-  letter-spacing 1.4px
+  font-size $font-size
+  font-weight: $font-weight
+  letter-spacing $letter-spacing
 
-.q-list
-  border  none
 </style>
