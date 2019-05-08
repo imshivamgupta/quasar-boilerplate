@@ -55,7 +55,7 @@ module.exports = function (ctx) {
         'QItemSide',
         'QBtnToggle',
         'QTabs',
-        'QTab',
+        'QRouteTab',
         'QScrollArea',
         'QItemTile'
       ],

@@ -5,8 +5,8 @@
         <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
-        <q-tabs v-model="tab" class="nav-item" v-for="(item , index) in navItems" :key="index">
-          <q-tab slot="title" :name="item.name" :label="item.label"/>
+        <q-tabs class="nav-item" v-for="(item, index) in navItems" :key="index">
+        <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
         </q-tabs>
       <q-btn-group class="navbar-right q-ml-auto">
         <q-btn label='View As'/>
@@ -50,6 +50,7 @@
 
 <script>
 import { openURL } from 'quasar'
+
 export default {
   name: 'MyLayout',
   data () {
@@ -59,12 +60,12 @@ export default {
       mini: true,
       width: 200,
       navItems: [
-        { name: 'home', label: 'HOME' },
-        { name: 'refferalAndTsa', label: 'REFFERAL & TSA' },
-        { name: 'assesments', label: 'ASSESMENTS' },
-        { name: 'treatment', label: 'TREATMENT' },
-        { name: 'calender', label: 'CALENDER' },
-        { name: 'analysis', label: 'ANALYSIS' }
+        { destination: '/home', label: 'HOME' },
+        { destination: '/refferal', label: 'REFFERAL & TSA' },
+        { destination: '/assesments', label: 'ASSESMENTS' },
+        { destination: '/treatment', label: 'TREATMENT' },
+        { destination: '/calender', label: 'CALENDER' },
+        { destination: '/analysis', label: 'ANALYSIS' }
       ]
       // model: 'one'
     }
