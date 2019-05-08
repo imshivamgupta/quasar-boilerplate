@@ -5,9 +5,12 @@
         <q-btn flat dense round @click="miniState = !miniState" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
-        <q-tabs color="tertiary" class="nav-item" v-for="(item, index) in navItems" :key="index">
-          <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
-        </q-tabs>
+        <div class="q-navbar-links flex">
+          <q-tabs color="tertiary" class="nav-item" v-for="(item, index) in navItems" :key="index">
+            <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
+          </q-tabs>
+        </div>
+
         <q-btn-group class="navbar-right q-ml-auto">
           <q-btn label='View As'/>
           <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
