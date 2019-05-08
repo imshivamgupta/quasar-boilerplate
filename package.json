@@ -5,8 +5,10 @@
   "productName": "Quasar App",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Shivam Gupta <shivam.gupta@codinova.com>",
+  "repo": "https://github.com/imshivamgupta/quasar-boilerplate",
   "private": true,
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },
