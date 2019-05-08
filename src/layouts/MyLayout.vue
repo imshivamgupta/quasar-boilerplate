@@ -2,7 +2,7 @@
   <q-layout row view="hHh Lpr lff">
     <q-layout-header row>
       <q-toolbar color="tertiary" id="navbar" class="q-pb-none">
-        <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
+        <q-btn flat dense round @click="miniState = !miniState" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
         <q-tabs class="nav-item" v-for="(item, index) in navItems" :key="index">
@@ -21,23 +21,25 @@
       side="left"
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
-      :mini="mini"
-      @mouseover="mini = false"
-      @mouseout="mini = true"
+      :mini="miniState"
       :width="width"
     >
       <q-scroll-area class="fit">
-        <q-list>
-          <!-- li list -->
-          <q-item clickable v-ripple>
-            <q-item-side>
-              <q-item-tile>
-                <q-icon name="inbox" />
-              </q-item-tile>
-            </q-item-side>
-            <q-item-main >
-              <q-item-tile/>
-            </q-item-main>
+        <q-list inset-separator class="q-pt-lg">
+          <!-- <q-list-header>
+            Menu Items
+          </q-list-header> -->
+          <q-item v-ripple to="/" class="q-pa-md">
+            <q-item-side icon="assignment_turned_in"></q-item-side>
+            <q-item-main label="ALLOCATION"></q-item-main>
+          </q-item>
+          <q-item v-ripple class="q-pa-md">
+            <q-item-side icon="timeline"></q-item-side>
+            <q-item-main label="SUMMARY"></q-item-main>
+          </q-item>
+          <q-item v-ripple class="q-pa-md">
+            <q-item-side icon="watch_later"></q-item-side>
+            <q-item-main label="SHIFTS"></q-item-main>
           </q-item>
         </q-list>
       </q-scroll-area>
@@ -57,7 +59,7 @@ export default {
     return {
       leftDrawerOpen: true,
       tab: '',
-      mini: true,
+      miniState: true,
       width: 200,
       navItems: [
         { destination: '/home', label: 'HOME' },
@@ -77,9 +79,12 @@ export default {
 </script>
 
 <style lang="stylus">
-#navbar
-  .nav-item /deep/.bg-primary
-    background: none !important
+
+#navbar {
+  .nav-item /deep/.bg-primary {
+    background: none !important;
+  }
+}
 
 .q-tab-label
   font-size 14px
@@ -100,11 +105,17 @@ export default {
 .q-tabs-bar
   border: 3px solid #ffdd00;
 
-.q-tab-label
-  font-size: $button-font-size
-  line-height: 1.43
-  letter-spacing: 1.4px
-  text-align: left
-  color: #ffffff
+.q-tab-label {
+  font-size: $button-font-size;
+  line-height: 1.43;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: #ffffff;
+}
+.q-item.active, .q-item.router-link-active, .q-item:focus
+  background-color #ffdd00
+
+.q-item
+  font-size 14px
 
 </style>
