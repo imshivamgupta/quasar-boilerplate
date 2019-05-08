@@ -5,17 +5,16 @@
         <q-btn flat dense round @click="miniState = !miniState" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
-        <q-tabs class="nav-item" v-for="(item, index) in navItems" :key="index">
-        <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
+        <q-tabs color="tertiary" class="nav-item" v-for="(item, index) in navItems" :key="index">
+          <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
         </q-tabs>
-      <q-btn-group class="navbar-right q-ml-auto">
-        <q-btn label='View As'/>
-        <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
-        <q-btn><img src="../assets/btn_notifications_up.svg" alt=""><span class="counter q-mr-lg q-mb-lg">4</span></q-btn>
-        <!-- <q-btn label='name person'></q-btn><q-avatar color="primary" text-color="white">J</q-avatar> -->
-      </q-btn-group>
+        <q-btn-group class="navbar-right q-ml-auto">
+          <q-btn label='View As'/>
+          <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
+          <q-btn><img src="../assets/btn_notifications_up.svg" alt=""><span class="counter q-mr-lg q-mb-lg">4</span></q-btn>
+          <!-- <q-btn label='name person'></q-btn><q-avatar color="primary" text-color="white">J</q-avatar> -->
+        </q-btn-group>
       </q-toolbar>
-
     </q-layout-header>
     <q-layout-drawer
       side="left"
@@ -29,17 +28,9 @@
           <!-- <q-list-header>
             Menu Items
           </q-list-header> -->
-          <q-item v-ripple to="/" class="q-pa-md">
-            <q-item-side icon="assignment_turned_in"></q-item-side>
-            <q-item-main label="ALLOCATION"></q-item-main>
-          </q-item>
-          <q-item v-ripple class="q-pa-md">
-            <q-item-side icon="timeline"></q-item-side>
-            <q-item-main label="SUMMARY"></q-item-main>
-          </q-item>
-          <q-item v-ripple class="q-pa-md">
-            <q-item-side icon="watch_later"></q-item-side>
-            <q-item-main label="SHIFTS"></q-item-main>
+          <q-item v-ripple class="q-pa-md" v-for="item in sideNavItems" :key="item.label" :to="item.path">
+            <q-item-side :icon="item.icon"></q-item-side>
+            <q-item-main :label="item.label"></q-item-main>
           </q-item>
         </q-list>
       </q-scroll-area>
@@ -68,8 +59,23 @@ export default {
         { destination: '/treatment', label: 'TREATMENT' },
         { destination: '/calender', label: 'CALENDER' },
         { destination: '/analysis', label: 'ANALYSIS' }
+      ],
+      sideNavItems: [
+        { icon: 'assignment_turned_in',
+          label: 'ALLOCATION',
+          path: '/'
+        },
+        {
+          icon: 'timeline',
+          label: 'SUMMARY',
+          path: '/summary'
+        },
+        {
+          icon: 'watch_later',
+          label: 'SHIFTS',
+          path: '/shifts'
+        }
       ]
-      // model: 'one'
     }
   },
   methods: {
@@ -79,12 +85,13 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '~variables'
 
-#navbar {
-  .nav-item /deep/.bg-primary {
-    background: none !important;
-  }
-}
+// #navbar {
+//   .nav-item /deep/.bg-primary {
+//     background: none !important;
+//   }
+// }
 
 .q-tab-label
   font-size 14px
@@ -112,10 +119,19 @@ export default {
   text-align: left;
   color: #ffffff;
 }
+.q-tab
+  padding 0
+
+.q-tabs-head
+  font-family 400
+  font-size 14px
+
 .q-item.active, .q-item.router-link-active, .q-item:focus
   background-color #ffdd00
 
 .q-item
   font-size 14px
+  font-weight: 500
+  letter-spacing 1.4px
 
 </style>
