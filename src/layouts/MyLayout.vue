@@ -6,14 +6,16 @@
           <q-icon name="menu"/>
         </q-btn>
         <q-tabs class="nav-item" v-for="(item, index) in navItems" :key="index">
-        <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
+        <q-route-tab exact slot="title" :to='item.destination' :label='item.label'></q-route-tab>
         </q-tabs>
       <q-btn-group class="navbar-right q-ml-auto">
         <q-btn label='View As'/>
         <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
         <q-btn><img src="../assets/btn_notifications_up.svg" alt=""><span class="counter q-mr-lg">4</span></q-btn>
-        <!-- <q-btn label='name person'></q-btn><q-avatar color="primary" text-color="white">J</q-avatar> -->
       </q-btn-group>
+      <q-btn-dropdown label="Some Name">
+
+      </q-btn-dropdown>
       </q-toolbar>
 
     </q-layout-header>
@@ -62,7 +64,7 @@ export default {
       miniState: true,
       width: 200,
       navItems: [
-        { destination: '/home', label: 'HOME' },
+        { destination: '/', label: 'HOME' },
         { destination: '/refferal', label: 'REFFERAL & TSA' },
         { destination: '/assesments', label: 'ASSESMENTS' },
         { destination: '/treatment', label: 'TREATMENT' },
