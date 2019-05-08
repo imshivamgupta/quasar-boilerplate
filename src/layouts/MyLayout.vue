@@ -77,11 +77,9 @@ export default {
 </script>
 
 <style lang="stylus">
-#navbar {
-  .nav-item /deep/.bg-primary {
-    background: none !important;
-  }
-}
+#navbar
+  .nav-item /deep/.bg-primary
+    background: none !important
 
 .q-tab-label
   font-size 14px
@@ -98,15 +96,15 @@ export default {
   border-radius 50%
   color black
   width 20px
-.q-tabs-bar {
-  border: 3px solid #ffdd00;
-}
 
-.q-tab-label {
-  font-size: $button-font-size;
-  line-height: 1.43;
-  letter-spacing: 1.4px;
-  text-align: left;
-  color: #ffffff;
-}
+.q-tabs-bar
+  border: 3px solid #ffdd00;
+
+.q-tab-label
+  font-size: $button-font-size
+  line-height: 1.43
+  letter-spacing: 1.4px
+  text-align: left
+  color: #ffffff
+
 </style>
