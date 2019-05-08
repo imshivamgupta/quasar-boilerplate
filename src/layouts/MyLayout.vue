@@ -6,14 +6,19 @@
           <q-icon name="menu"/>
         </q-btn>
         <q-tabs color="tertiary" class="nav-item" v-for="(item, index) in navItems" :key="index">
-          <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
+          <q-route-tab exact slot="title" :to='item.destination' :label='item.label'></q-route-tab>
         </q-tabs>
         <q-btn-group class="navbar-right q-ml-auto">
           <q-btn label='View As'/>
           <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
-          <q-btn><img src="../assets/btn_notifications_up.svg" alt=""><span class="counter q-mr-lg q-mb-lg">4</span></q-btn>
+          <q-btn><img src="../assets/btn_notifications_up.svg" alt="">  <q-chip floating class="counter q-mr-lg">1</q-chip></q-btn>
           <!-- <q-btn label='name person'></q-btn><q-avatar color="primary" text-color="white">J</q-avatar> -->
         </q-btn-group>
+        <q-list class="no-border">
+          <q-item><q-item-main label="User Name"/>
+          <q-item-side avatar="assets/btn_avatar.svg" />
+          </q-item>
+        </q-list>
       </q-toolbar>
     </q-layout-header>
     <q-layout-drawer
@@ -107,7 +112,7 @@ export default {
   background yellow
   border-radius 50%
   color black
-  width 20px
+  width 15px
 
 .q-tabs-bar
   border: 3px solid #ffdd00;

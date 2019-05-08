@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+    <defs>
+        <style>
+            .cls-1{fill:#4c62bf}
+        </style>
+    </defs>
+    <path id="btn_avatar" d="M22 0A22 22 0 1 1 0 22 22 22 0 0 1 22 0z" class="cls-1"/>
+</svg>
