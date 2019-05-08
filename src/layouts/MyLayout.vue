@@ -5,18 +5,22 @@
         <q-btn flat dense round @click="miniState = !miniState" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
-        <div class="q-navbar-links flex">
-          <q-tabs color="tertiary" class="nav-item" v-for="(item, index) in navItems" :key="index">
-            <q-route-tab slot="title" :to='item.destination' :label='item.label'></q-route-tab>
-          </q-tabs>
-        </div>
-
+        <q-tabs color="tertiary" class="nav-item" v-for="(item, index) in navItems" :key="index">
+          <q-route-tab exact slot="title" :to='item.destination' :label='item.label'></q-route-tab>
+        </q-tabs>
         <q-btn-group class="navbar-right q-ml-auto">
           <q-btn label='View As'/>
           <q-btn><img src="../assets/btn_applications_up.svg" alt=""></q-btn>
-          <q-btn><img src="../assets/btn_notifications_up.svg" alt=""><span class="counter q-mr-lg q-mb-lg">4</span></q-btn>
+          <q-btn><img src="../assets/btn_notifications_up.svg" alt="">
+          <q-chip floating class="counter q-mr-lg">1</q-chip></q-btn>
           <!-- <q-btn label='name person'></q-btn><q-avatar color="primary" text-color="white">J</q-avatar> -->
         </q-btn-group>
+        <q-list class="no-border q-pa-none">
+          <q-item class="q-pa-none">
+            <q-item-main label="User Name"/>
+            <q-item-side avatar="assets/btn_avatar.svg" />
+          </q-item>
+        </q-list>
       </q-toolbar>
     </q-layout-header>
     <q-layout-drawer
@@ -56,7 +60,7 @@ export default {
       miniState: true,
       width: 200,
       navItems: [
-        { destination: '/home', label: 'HOME' },
+        { destination: '/', label: 'HOME' },
         { destination: '/refferal', label: 'REFFERAL & TSA' },
         { destination: '/assesments', label: 'ASSESMENTS' },
         { destination: '/treatment', label: 'TREATMENT' },
@@ -110,7 +114,7 @@ export default {
   background yellow
   border-radius 50%
   color black
-  width 20px
+  width 15px
 
 .q-tabs-bar
   border: 3px solid #ffdd00;

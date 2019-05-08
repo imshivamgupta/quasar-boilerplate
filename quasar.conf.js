@@ -1,3 +1,4 @@
+var path = require('path')
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
@@ -30,6 +31,11 @@ module.exports = function (ctx) {
         })
       }
     },
+    resolve: {
+      alias: {
+        'styles': path.resolve(__dirname, './src/css/themes')
+      }
+    },
     devServer: {
       // https: true,
       // port: 8080,
@@ -57,8 +63,9 @@ module.exports = function (ctx) {
         'QTabs',
         'QRouteTab',
         'QScrollArea',
-        'QItemTile'
-
+        'QItemTile',
+        'QBtnDropdown',
+        'QChip'
       ],
       directives: [
         'Ripple'
@@ -134,11 +141,6 @@ module.exports = function (ctx) {
 
         // Window only
         // win32metadata: { ... }
-      },
-      builder: {
-        // https://www.electron.build/configuration/configuration
-
-        // appId: 'quasar-app'
       }
     }
   }

@@ -4,7 +4,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '/home', component: () => import('pages/Index.vue') },
+      { path: '/', component: () => import('pages/Index.vue') },
       { path: '/refferal', component: () => import('../components/refferalAndTsa.vue') },
       { path: '/assesments', component: () => import('../components/assesments.vue') },
       { path: '/treatment', component: () => import('../components/treatment.vue') },
